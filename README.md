@@ -1,4 +1,4 @@
-Firebase Cloud Messaging For Client base Web Application
+Firebase Cloud Messaging For Client Base Web Application
 ===================================
 
 The Firebase Cloud Messaging  demonstrates how to:
@@ -28,7 +28,7 @@ NOTE: If your payload has a `notification` object, `setBackgroundMessageHandler`
 
 Service worker will not work on file server . it will be work on https server or local server
 
-Testing url Will be - http://localhost/firebase/index.html
+Testing local url  - http://localhost/firebase/index.html
 
 ### send FcM using cURL CLI
 ```
@@ -45,16 +45,6 @@ curl -X POST -H "Authorization: key=<your_server_key>" -H "Content-Type: applica
 }' https://fcm.googleapis.com/fcm/send
 ```
 
-### App focus
-When the app has the browser focus, the received message is handled through
-the `onMessage` callback in `index.html`. When the app does not have browser
-focus then the `setBackgroundMessageHandler` callback in `firebase-messaging-sw.js`
-is where the received message is handled.
-
-The browser gives your app focus when both:
-
-1. Your app is running in the currently selected browser tab.
-2. The browser tab's window currently has focus, as defined by the operating system.
 
 Support
 -------
