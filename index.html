@@ -29,7 +29,7 @@
             try{
             window.addEventListener('load',()=>{
                
-                    navigator.serviceWorker.register('../firebase/firebase-messaging-sw.js')
+                    navigator.serviceWorker.register('./firebase-messaging-sw.js')
         .then(function(registration) {
          console.log("Service Worker Registered");
          var config = {
@@ -90,7 +90,7 @@
             NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload);
 
             if(enableForegroundNotification) {
-                const {title, ...options} = JSON.parse(payload.data.notification);
+                const {title, ...options} = payload.data.notification;
                 navigator.serviceWorker.getRegistrations().then(registration => {
                     registration[0].showNotification(title, options);
                 });
